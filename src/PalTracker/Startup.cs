@@ -30,11 +30,11 @@ namespace PalTracker
             var message = ExtractConfigValue("WELCOME_MESSAGE");
             services.AddSingleton(sp => new WelcomeMessage(message));
 
-            var port = "8080";//ExtractConfigValue("PORT");
-            var limit = "1024M";//ExtractConfigValue("MEMORY_LIMIT");
+            var port = ExtractConfigValue("PORT");
+            var limit = ExtractConfigValue("MEMORY_LIMIT");
 
-            var index = "0";//ExtractConfigValue("CF_INSTANCE_INDEX");
-            var address = "127.0.0.1";//ExtractConfigValue("CF_INSTANCE_ADDR");        
+            var index = ExtractConfigValue("CF_INSTANCE_INDEX");
+            var address = ExtractConfigValue("CF_INSTANCE_ADDR");        
            services.AddSingleton(sp => new CloudFoundryInfo(port, limit, index, address));
 
            services.AddSingleton<ITimeEntryRepository, InMemoryTimeEntryRepository>();
