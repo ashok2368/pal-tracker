@@ -1,4 +1,4 @@
- ---
+---
 applications:
 - name: pal-tracker-omega-review
   path: src/PalTracker/bin/Release/netcoreapp3.1/publish/
